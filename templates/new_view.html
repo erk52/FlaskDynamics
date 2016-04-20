@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+<link href=
+"http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css"
+rel="stylesheet">
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  TeX: {
+     equationNumbers: {  autoNumber: "AMS"  },
+     extensions: ["AMSmath.js", "AMSsymbols.js", "autobold.js", "color.js"]
+  }
+});
+</script>
+<script type="text/javascript" src=
+"http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+<!--
+<nav class="navbar navbar-default" role="navigation">
+<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+    <ul class="nav navbar-nav">
+       {% for text, url in some_sequence %}
+       <li><a href="/{{url}}">{{ text }}</a></li>
+       {% endfor %}
+       </ul>
+</div>
+</nav>
+-->
+
+<h2>2-Dimensional Dynamical System</h2>
+
+This will generate a phase plot for a 2D system of equations.
+
+<p>
+<form method=post action="">
+<table>
+  {% for field in form %}
+    <tr>
+    <td>{{ field.label }}</td><td>{{ field }}</td>
+    </tr>
+  {% endfor %}
+</table>
+<p><input type=submit value="Phase Plot"></form></p>
+<p>
+{% if result != None %}
+{{ result|safe }}
+{% endif %}
+</html>
